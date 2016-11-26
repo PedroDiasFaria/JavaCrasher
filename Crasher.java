@@ -7,6 +7,8 @@
 DISCLAIMER!
 This program is a mess totally on purpose.
 Made to reply an answer on a best course application.
+
+Also, I'm not responsable for any data loss. Save everything before running this
 */
 
 import java.io.*;
@@ -24,7 +26,7 @@ public class Crasher{
     public void crashThis(int os){
 
       try{
-        String execCmd = "cmd /c /" + crasher_name;
+        String execCmd = "cmd.exe /c " + crasher_name;
         if(os == 1){
           execCmd = "/bin/bash ./"+crasher_name;
         }
@@ -40,7 +42,6 @@ public class Crasher{
       }catch(IOException e){
         e.printStackTrace();
       }
-      this.file.delete();
     }
 
     public CrasherScript(){
@@ -87,11 +88,12 @@ public class Crasher{
 
       if(typeOfOS == 1){
         leString.append("#!/bin/bash \n");
+      }else{
+        leString.append("@echo off \n");
       }
       leString.append("echo 'Crash in:' \n");
       for(int i = (n/8); i > 0 ; i--){
         leString.append("echo '"+ i +"' \n");
-        leString.append("sleep 0.5 \n");
         if(i==2) leString.append("echo 'Accept me!' \n");
       }
       leString.append("echo 'Time for a crash!!!!!!!!' \n");
