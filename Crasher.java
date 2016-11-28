@@ -6,7 +6,8 @@
 
 DISCLAIMER!
 This program is a mess totally on purpose.
-Made to reply an answer on a best course application.
+Works on both Windows/Linux
+Made to reply an answer on a BEST course application.
 
 Also, I'm not responsable for any data loss. Save everything before running this
 */
